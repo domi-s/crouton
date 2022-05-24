@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>crouton</title>
+
+		<link rel="shortcut icon" href="crouton.png">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+		<style type="text/css">
+			* {
+				margin: 0;
+				font-family: 'Rubik', sans-serif;
+			}
+
+			body {
+				min-width: 100%;
+				min-height: 100vh;
+				color: #ccecff;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				overflow: hidden;
+			}
+
+			h1 {
+				font-size: 27vw;
+				z-index: -1;
+			}
+
+			img {
+				position: fixed;
+				animation: anim 1000ms ease-out forwards;
+			}
+
+			@keyframes anim {
+				0%, 50% {
+					opacity: 0;
+					transform: scale(3);
+				}
+
+				75% {
+					transform: scale(0.75);
+				}
+
+				100% {
+					opacity: 1;
+					transform: scale(1);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<h1>00</h1>
+		<script type="text/javascript">
+			var croutons = 0;
+			function createCrouton() {
+				var newimg = document.createElement("img");
+				newimg.src = "crouton.png";
+				newimg.style.cssText = "top: " + (Math.floor(Math.random() * 990) / 10) + "%; left: " + (Math.floor(Math.random() * 990) / 10) + "%;";
+				document.body.appendChild(newimg);
+
+				croutons++;
+				document.querySelector("h1").innerHTML = (croutons < 10 ? "0" : "") + croutons;
+			}
+
+			createCrouton();
+			setInterval(function () {
+				createCrouton();
+			}, 2000);
+		</script>
+	</body>
+</html>
