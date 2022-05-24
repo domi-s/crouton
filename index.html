@@ -64,8 +64,10 @@
 				document.body.appendChild(newimg);
 
 				croutons++;
-				document.querySelector("h1").innerHTML = (croutons < 10 ? "0" : "") + croutons;
-				document.title = (croutons < 10 ? "0" : "") + croutons + " - crouton";
+				setTimeout(function () {
+					document.querySelector("h1").innerHTML = (croutons < 10 ? "0" : "") + croutons;
+					document.title = (croutons < 10 ? "0" : "") + croutons + " - crouton";
+				}, 1000);
 			}
 
 			createCrouton();
