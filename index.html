@@ -65,6 +65,7 @@
 
 				croutons++;
 				document.querySelector("h1").innerHTML = (croutons < 10 ? "0" : "") + croutons;
+				document.title = (croutons < 10 ? "0" : "") + croutons + " - crouton";
 			}
 
 			createCrouton();
